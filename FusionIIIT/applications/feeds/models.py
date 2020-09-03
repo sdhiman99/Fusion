@@ -302,3 +302,21 @@ class Profile(models.Model):
 	profile_view = models.IntegerField(default=0)
 	def __str__(self):
 		return '%s\'s Bio is  ----> %s' % (self.user, self.bio)
+
+class Roles(models.Model):
+	user = models.ForeignKey(User, default=1, on_delete=models.CASCADE)
+	role = models.CharField(max_length=100, blank=False)
+	active = models.BooleanField(default=True)
+	def __str__(self):
+	 return '%s is assigned %s role' % (self.user, self.role)
+
+class QuestionAccessControl(models.Model):
+	question = models.ForeignKey(AskaQuestion, related_name='question_list', default=1, on_delete=models.CASCADE)
+	canVote = models.BooleanField()
+	canAnswer = models.BooleanField()
+	canComment = models.BooleanField()
+	posted_by = models.ForeignKey(Roles, default=1, on_delete=models.CASCADE)
+	created_at = models.DateTimeField(auto_now_add=False, auto_now=False, default=timezone.now)
+	def __str__(self):
+		return "question number " + str(self.question.id)
+	
