@@ -190,3 +190,9 @@ The project now supports notifications across all modules. To implement notifica
   module_notif(sender, receiver, type)
   ```
 * The Notifications should then appear in the dashboard for the recipient
+
+<!-- PleaseDontEditThisComment367100423 -->
+<!-- Please don't add anything between these two comments -->
+## Have some fun! 😊 
+<img src="https://pbs.twimg.com/media/D9QruDlXUAEiyRl?format=jpg&name=large">
+<!-- PleaseDontEditThisComment807136229 -->
